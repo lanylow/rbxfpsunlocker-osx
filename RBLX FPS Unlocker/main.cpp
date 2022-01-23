@@ -149,7 +149,7 @@ void set_fps_cap(double cap){
 int main(int argc, const char * argv[]) {
     system("clear");
     if (getuid() != 0) throw std::runtime_error("This application has to be ran as root.");
-    if (*++argv == NULL) throw std::runtime_error("No FPS cap provided. Usage: sudo ./\"RBLX FPS Unlocker\" <cap>");
+    if (*++argv == NULL) throw std::runtime_error("No FPS cap provided. Usage: sudo ./rbxfpsunlocker <cap>");
     auto cap = strtoul(*argv, NULL, 0);
     if (cap == 0) throw std::runtime_error("Invalid FPS cap provided.");
     if (!init_roblox_struct()) throw std::runtime_error("Failed to get Rloblox process info.");
