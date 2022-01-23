@@ -22,4 +22,7 @@ Now, I understand those steps may be tedious to some and we're working to simply
 # Disclaimer
 Because this is relatively new, I am not sure if you will be banned for using this FPS unlocker so please **use at your own risk**. This uses the same exact method of unlocking your FPS as [axstin's fps unlocker](https://github.com/axstin/rbxfpsunlocker) however, so bans are probably unlikely to happen.
 
-
+# Credits
+@fjij - For bringing the idea to our attention
+@lanylow - For reverse engineering and coding the unlocker
+@SeizureSaladd - For testing the code and coding the front-end
