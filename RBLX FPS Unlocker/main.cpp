@@ -10,6 +10,8 @@
 #include <mach-o/dyld_images.h>
 #include <libproc.h>
 
+//Created by lanylow and seizure salad
+
 struct {
   pid_t id = 0;
   mach_port_t task = 0;
@@ -154,6 +156,7 @@ int main(int argc, const char * argv[]) {
     if (cap == 0) throw std::runtime_error("Invalid FPS cap provided.");
     if (!init_roblox_struct()) throw std::runtime_error("Failed to get Rloblox process info.");
     printf("Welcome to the first ever Roblox FPS Unlocker for macOS!\nThis is obviously not finished yet but it is functional.\nCreated by lanylow and seizure salad.\n");
+    
     set_fps_cap(cap);
 
     return 0;
