@@ -5,8 +5,8 @@ The first Roblox FPS unlocker for macOS. This is a very simple unpolished FPS un
 1. Download the latest release from https://github.com/lanylow/rbxfpsunlocker-osx/releases.
 2. Extract `rbxfpsunlocker.zip` by double clicking on it. 
 3. Select `rbxfpsunlocker` in Finder and right click and press `Get Info`.
-4. Copy all text after where it says `Where: `.
-5. Open Terminal and write the following command. Replace the placeholder path with the path you copy from Finder.
+4. Copy all text after where it says `Where:`.
+5. Open Terminal and write the following command. Replace the placeholder path with the copied path from Finder.
 ```
 cd /path/to/rbxfpsunlocker/
 ```
@@ -20,7 +20,7 @@ sudo ./rbxfpsunlocker 120
 A more user friendly setup will soon be released with a video tutorial.
 
 ## Disclaimer
-Because this is relatively new, I am not sure if you will be banned for using this FPS unlocker so please **use at your own risk**. This uses the same exact method of unlocking your FPS as [axstin's rbxfpsunlocker](https://github.com/axstin/rbxfpsunlocker), so bans are unlikely to happen.
+**Use at your own risk**, this is relatively new and we aren't sure if this is bannable. This uses the same computational/theoretical method as [axstin's rbxfpsunlocker](https://github.com/axstin/rbxfpsunlocker). 
 
 ## Credits
 @fjij - For bringing the idea to our attention
