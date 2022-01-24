@@ -141,23 +141,25 @@ mach_vm_address_t find_task_scheduler() {
 }
 
 void set_fps_cap(double cap){
-    auto task_scheduler_pointer = find_task_scheduler();
-    auto task_sheduler = read_memory<mach_vm_address_t>(task_scheduler_pointer);
-    
-    write_memory<double>(task_sheduler + 0x130, (double)(1.0 / cap));
-    printf("FPS cap successfully set to %f\n", cap);
+  auto task_sheduler = read_memory<mach_vm_address_t>(find_task_scheduler());
+  write_memory<double>(task_sheduler + 0x130, (double)(1.0 / cap));
+
+  printf("FPS cap successfully set to %f\n", cap);
 }
 
 int main(int argc, const char * argv[]) {
-    system("clear");
-    if (getuid() != 0) throw std::runtime_error("This application has to be ran as root.");
-    if (*++argv == NULL) throw std::runtime_error("No FPS cap provided. Usage: sudo ./rbxfpsunlocker <cap>");
-    auto cap = strtoul(*argv, NULL, 0);
-    if (cap == 0) throw std::runtime_error("Invalid FPS cap provided.");
-    if (!init_roblox_struct()) throw std::runtime_error("Failed to get Rloblox process info.");
-    printf("Welcome to the first ever Roblox FPS Unlocker for macOS!\nThis is obviously not finished yet but it is functional.\nCreated by lanylow and seizure salad.\n");
-    
-    set_fps_cap(cap);
+  system("clear");
 
-    return 0;
+  if (getuid() != 0) throw std::runtime_error("This application has to be ran as root.");
+  if (*++argv == NULL) throw std::runtime_error("No FPS cap provided. Usage: sudo ./rbxfpsunlocker <cap>");
+
+  auto cap = strtoul(*argv, NULL, 0);
+  if (cap == 0) throw std::runtime_error("Invalid FPS cap provided.");
+  if (!init_roblox_struct()) throw std::runtime_error("Failed to get Rloblox process info.");
+  
+  printf("Welcome to the first ever Roblox FPS Unlocker for macOS!\nThis is obviously not finished yet but it is functional.\nCreated by lanylow and seizure salad.\n");
+  
+  set_fps_cap(cap);
+
+  return 0;
 }
