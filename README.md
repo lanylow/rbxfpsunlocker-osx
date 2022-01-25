@@ -1,29 +1,56 @@
 # rbxfpsunlocker-osx [![License](https://img.shields.io/badge/License-GPL3.0-green.svg)](https://github.com/lanylow/rbxfpsunlocker-osx/blob/main/LICENSE) ![OS](https://img.shields.io/badge/OS-macOS-green.svg)
-The first Roblox FPS unlocker for macOS. This is a very simple unpolished FPS unlocker with more updates to come. This only works on Intel Macs as far as I know but you could try to run it using Rosetta 2. We don't have any plans as of now to make this work for M1 Macs due to lack of testing hardware but that might change in the future. 
+
+The first Roblox FPS unlocker for macOS. This is a very simple and unpolished FPS unlocker with more updates to come. This has ONLY been tested on Intel-based machines, you can try run under Rosetta 2 but expect issues. There are no plans to make this work for Apple Silicon machines natively due to lack of hardware, this is subject to change.
 
 ## Usage
+
 1. Download the latest release from https://github.com/lanylow/rbxfpsunlocker-osx/releases.
-2. Extract `rbxfpsunlocker.zip` by double clicking on it if Safari doesn't extract it automatically. 
-3. Locate `rbxfpsunlocker` in Finder in your downloads and right click and press `Get Info`.
+2. Extract `rbxfpsunlocker.zip` by double clicking on it, if it wasn't extracted automatically.
+3. Locate `rbxfpsunlocker` in Finder in your Downloads and right click and press `Get Info`.
 4. Copy all text after where it says `Where:`.
-5. Open Terminal and write the following command. Replace the placeholder path with the copied path from Finder.
+5. Open Terminal and write the following command. Replace the `<path>` with the copied path from Finder.
 
 ```
-cd /path/to/rbxfpsunlocker/
+cd <path>
 ```
-6. Using the `cd` command, you should now be in your downloads folder or wherever else your FPS unlocker file may be.
-7. In the same Terminal window, run the following command. `120` may be replaced with whatever FPS cap desired.
+
+6. Using the `cd` command, you should now be in your Downloads folder or wherever else your FPS unlocker file may be.
+7. In the same Terminal window, run the following command. `<cap>` may be replaced with whatever framerate is desired, e.g. 90, 120, 144, etc. If no framerate is supplied it will automatically be set to 120.
+
 ```
-sudo ./rbxfpsunlocker 120
+sudo ./rbxfpsunlocker <cap>
 ```
+
 8. Enjoy those smooth frames but on macOS now
 
 A more user friendly setup will soon be released with a video tutorial.
 
+## Compiling (advanced)
+
+1. Open Terminal and clone the repository and change directory.
+
+```
+git clone https://github.com/lanylow/rbxfpsunlocker-osx/ && cd rbxfpsunlocker-osx
+```
+
+2. Compile. This will fail if you don't have [Xcode Developer tools](https://mac.install.guide/commandlinetools/index.html) installed.
+
+```
+make
+```
+
+3. Launch the unlocker
+
+```
+sudo ./rbxfpsunlocker <cap>
+```
+
 ## Disclaimer
-**Use at your own risk**, this is relatively new and we aren't sure if this is bannable. This uses the same computational/theoretical method as [axstin's rbxfpsunlocker](https://github.com/axstin/rbxfpsunlocker). 
+
+**Use at your own risk**, this is new and still in-development. However this uses the same computational/theoretical method as [axstin](https://github.com/axstin/)'s [rbxfpsunlocker](https://github.com/axstin/rbxfpsunlocker) which has been cleared by Roblox as safe to use.
 
 ## Credits
+
 @fjij - For bringing the idea to our attention
 
 @lanylow - For reverse engineering and coding the unlocker
