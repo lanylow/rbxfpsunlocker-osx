@@ -15,7 +15,7 @@ cd <path>
 ```
 
 6. Using the `cd` command, you should now be in your Downloads folder or wherever else your FPS unlocker file may be.
-7. In the same Terminal window, run the following command. `<cap>` may be replaced with whatever framerate is desired, e.g. 90, 120, 144, etc.
+7. In the same Terminal window, run the following command. `<cap>` may be replaced with whatever framerate is desired, e.g. 90, 120, 144, etc. If no framerate is supplied it will automatically be set to 120.
 
 ```
 sudo ./rbxfpsunlocker <cap>

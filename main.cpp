@@ -10,7 +10,7 @@
 #include <mach-o/dyld_images.h>
 #include <libproc.h>
 
-//Created by lanylow and seizure salad
+//Created by lanylow and Seizure Salad
 
 struct {
   pid_t id = 0;
@@ -132,7 +132,7 @@ mach_vm_address_t find_task_scheduler() {
   auto data = read_data(roblox.load_address, roblox.size);
   auto address = (mach_vm_address_t)find_sig(data, data + roblox.size, "\xBF\xE8\x02\x00\x00\xE8\x00\x00\x00\x00\x48\x89\xC3\x48\x89\xC7\xE8\x00\x00\x00\x00\x48\x89\x1D\x00\x00\x00\x00", 28);
 
-  if (!address) throw std::runtime_error("Couldn't find the task scheduler pattern.");
+  if (!address) throw std::runtime_error("Couldn't find the task scheduler pattern.\nRoblox updates can cause this.\nCheck the GitHub for any new updates.");
 
   mach_vm_address_t res = roblox.load_address + ((address + *(uint32_t*)(address + 24) + 28) - (mach_vm_address_t)data);
   vm_deallocate(current_task(), (vm_offset_t)data, roblox.size);
@@ -148,16 +148,25 @@ void set_fps_cap(double cap){
 }
 
 int main(int argc, const char * argv[]) {
+  int cap;
+
   system("clear");
 
-  if (getuid() != 0) throw std::runtime_error("This application has to be ran as root.");
-  if (*++argv == NULL) throw std::runtime_error("No FPS cap provided. Usage: sudo ./rbxfpsunlocker <cap>");
+  if (getuid() != 0) throw std::runtime_error("This application has to be ran as root.\nUsage: sudo ./rbxfpsunlocker <cap>");
 
-  auto cap = strtoul(*argv, NULL, 0);
-  if (cap == 0) throw std::runtime_error("Invalid FPS cap provided.");
-  if (!init_roblox_struct()) throw std::runtime_error("Failed to get Rloblox process info.");
+  // Checking if framerate was passed in via argument.
+  if (*++argv != NULL) {
+    cap = strtoul(*argv, NULL, 0);
+
+    // If supplied argument was not an interger cap will be set to 120.
+    if(cap == 0) {
+      cap = 120;
+    }
+  } else cap = 120;
   
-  printf("Welcome to the first ever Roblox FPS Unlocker for macOS!\nThis is obviously not finished yet but it is functional.\nCreated by lanylow and seizure salad.\n");
+  if (!init_roblox_struct()) throw std::runtime_error("Failed to get Roblox process info.\nMake sure Roblox is open and try again.");
+  
+  printf("macOS Roblox FPS Unlocker\nCurrently in-development, use at your own risk.\nCreated by lanylow and Seizure Salad.");
   
   set_fps_cap(cap);
 
