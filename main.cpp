@@ -148,27 +148,20 @@ void set_fps_cap(double cap){
 }
 
 int main(int argc, const char * argv[]) {
-  int cap;
-
   system("clear");
-
   if (getuid() != 0) throw std::runtime_error("This application has to be ran as root.\nUsage: sudo ./rbxfpsunlocker <cap>");
 
-  // Checking if framerate was passed in via argument.
+  unsigned long cap;
   if (*++argv != NULL) {
     cap = strtoul(*argv, NULL, 0);
-
-    // If supplied argument was not an interger cap will be set to 120.
-    if(cap == 0) {
-      cap = 120;
-    }
+    if(cap == 0) cap = 120;
   } else cap = 120;
   
   if (!init_roblox_struct()) throw std::runtime_error("Failed to get Roblox process info.\nMake sure Roblox is open and try again.");
   
   printf("macOS Roblox FPS Unlocker\nCurrently in-development, use at your own risk.\nCreated by lanylow and Seizure Salad.");
   
-  set_fps_cap(cap);
+  set_fps_cap((double)cap);
 
   return 0;
 }

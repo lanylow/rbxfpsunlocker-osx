@@ -36,7 +36,7 @@ git clone https://github.com/lanylow/rbxfpsunlocker-osx/ && cd rbxfpsunlocker-os
 2. Compile. This will fail if you don't have [Xcode Developer tools](https://mac.install.guide/commandlinetools/index.html) installed.
 
 ```
-g++ --std=c++11 -o rbxfpsunlocker ./main.cpp
+make
 ```
 
 3. Launch the unlocker
