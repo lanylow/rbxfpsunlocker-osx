@@ -2,6 +2,9 @@
 
 The first Roblox FPS unlocker for macOS. This is a very simple and unpolished FPS unlocker with more updates to come. This has been tested and working both on Intel-based machines and under Rosetta 2 on M1.
 
+## Notice
+**The FPS Unlocker is _no longer working_ as of 3/16/22. Please kindly wait for an update.**
+
 ## Usage
 
 1. Download the latest release from https://github.com/lanylow/rbxfpsunlocker-osx/releases.
