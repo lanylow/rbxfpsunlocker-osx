@@ -87,7 +87,7 @@ bool init_roblox_struct() {
 }
 
 template <typename T>
-T read_memory(mach_vm_address_t address, off_t size = sizeof(T)) {
+T read_memory(const mach_vm_address_t address, const off_t size = sizeof(T)) {
   T buff{};
   vm_offset_t data;
   mach_msg_type_number_t sz;
@@ -100,7 +100,7 @@ T read_memory(mach_vm_address_t address, off_t size = sizeof(T)) {
   return buff;
 }
 
-uint8_t* read_data(mach_vm_address_t address, off_t size) {
+uint8_t* read_data(const mach_vm_address_t address, const off_t size) {
   vm_offset_t data;
   mach_msg_type_number_t sz;
 
@@ -110,18 +110,18 @@ uint8_t* read_data(mach_vm_address_t address, off_t size) {
 }
 
 template <typename T>
-void write_memory(mach_vm_address_t address, T data) {
+void write_memory(const mach_vm_address_t address, T data) {
   vm_write(roblox.task, (vm_address_t)address, (vm_offset_t)&data, sizeof(data));
 }
 
-bool compare(uint8_t* data, uint8_t* sig, uint32_t size) {
+bool compare(const uint8_t* data, const uint8_t* sig, const uint32_t size) {
   for (auto i = 0; i < size; i++)
     if (data[i] != sig[i] && sig[i] != 0x00)
       return false;
   return true;
 }
 
-uint8_t* find_sig(void* start, void* end, const char* sig, uint32_t size) {
+uint8_t* find_sig(const void* start, const void* end, const char* sig, const uint32_t size) {
   for (auto i = (uint8_t*)start; i < (uint8_t*)end - size; i++)
     if (compare(i, (uint8_t*)sig, size))
       return i;
@@ -130,9 +130,9 @@ uint8_t* find_sig(void* start, void* end, const char* sig, uint32_t size) {
 
 mach_vm_address_t find_task_scheduler() {
   auto data = read_data(roblox.load_address, roblox.size);
-  auto address = (mach_vm_address_t)find_sig(data, data + roblox.size, "\xBF\xE8\x02\x00\x00\xE8\x00\x00\x00\x00\x48\x89\xC3\x48\x89\xC7\xE8\x00\x00\x00\x00\x48\x89\x1D\x00\x00\x00\x00", 28);
+  auto address = (mach_vm_address_t)find_sig(data, data + roblox.size, "\xBF\xF0\x02\x00\x00\xE8\x00\x00\x00\x00\x48\x89\xC3\x48\x89\xC7\xE8\x00\x00\x00\x00\x48\x89\x1D\x00\x00\x00\x00", 28);
 
-  if (!address) throw std::runtime_error("Couldn't find the task scheduler pattern.\nRoblox updates can cause this.\nCheck the GitHub for any new updates.");
+  if (!address) throw std::logic_error("Couldn't find the task scheduler pattern.\nRoblox updates can cause this.\nCheck the GitHub for any new updates.");
 
   mach_vm_address_t res = roblox.load_address + ((address + *(uint32_t*)(address + 24) + 28) - (mach_vm_address_t)data);
   vm_deallocate(current_task(), (vm_offset_t)data, roblox.size);
@@ -140,28 +140,33 @@ mach_vm_address_t find_task_scheduler() {
   return res;
 }
 
-void set_fps_cap(double cap){
-  auto task_sheduler = read_memory<mach_vm_address_t>(find_task_scheduler());
-  write_memory<double>(task_sheduler + 0x130, (double)(1.0 / cap));
+int main(int argc, const char** argv) {
+  try {
+    system("clear");
+    printf("macOS Roblox FPS Unlocker\nCurrently in-development, use at your own risk.\nCreated by lanylow and Seizure Salad.\n");
+    if (getuid() != 0) throw std::runtime_error("This application has to be ran as root.\nUsage: sudo ./rbxfpsunlocker <cap>");
 
-  printf("FPS cap successfully set to %f\n", cap);
-}
+    unsigned long cap;
+    if (*++argv != NULL) {
+      cap = strtoul(*argv, NULL, 0);
+      if(cap == 0) cap = 120;
+    } else cap = 120;
+    
+    if (!init_roblox_struct()) throw std::logic_error("Failed to get Roblox process info.\nMake sure Roblox is open and try again.");
 
-int main(int argc, const char * argv[]) {
-  system("clear");
-  if (getuid() != 0) throw std::runtime_error("This application has to be ran as root.\nUsage: sudo ./rbxfpsunlocker <cap>");
+    auto task_scheduler = read_memory<mach_vm_address_t>(find_task_scheduler());
+    write_memory<double>(task_scheduler + 0x138, (double)(1.0 / cap));
 
-  unsigned long cap;
-  if (*++argv != NULL) {
-    cap = strtoul(*argv, NULL, 0);
-    if(cap == 0) cap = 120;
-  } else cap = 120;
-  
-  if (!init_roblox_struct()) throw std::runtime_error("Failed to get Roblox process info.\nMake sure Roblox is open and try again.");
-  
-  printf("macOS Roblox FPS Unlocker\nCurrently in-development, use at your own risk.\nCreated by lanylow and Seizure Salad.");
-  
-  set_fps_cap((double)cap);
+    printf("\x1b[92mFPS cap successfully set to %f\x1b[0m\n", (double)cap);
+  }
+  catch (std::runtime_error e) {
+    printf("\x1b[91mruntime_error: %s\x1b[0m\n", e.what());
+    printf("\x1b[0m");
+  }
+  catch (std::logic_error e) {
+    printf("\x1b[91mlogic_error: %s\x1b[0m\n", e.what());
+    printf("\x1b[0m");
+  }
 
   return 0;
 }
