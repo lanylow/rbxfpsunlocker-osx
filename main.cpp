@@ -161,11 +161,9 @@ int main(int argc, const char** argv) {
   }
   catch (std::runtime_error e) {
     printf("\x1b[91mruntime_error: %s\x1b[0m\n", e.what());
-    printf("\x1b[0m");
   }
   catch (std::logic_error e) {
     printf("\x1b[91mlogic_error: %s\x1b[0m\n", e.what());
-    printf("\x1b[0m");
   }
 
   return 0;
