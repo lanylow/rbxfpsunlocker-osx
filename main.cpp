@@ -1,6 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include <cstdint>
+#include <cstring>
 #include <stdexcept>
 
 #include <mach/mach_traps.h>
@@ -36,11 +37,11 @@ pid_t get_roblox_process_id() {
     char name[256];
     bzero(name, sizeof(name));
 
-    auto pos = strlen(path);
+    auto pos = std::strlen(path);
     while (pos >= 0 && path[pos] != '/') pos--;
 
-    strcpy(name, path + pos + 1);
-    if (strcmp(name, "RobloxPlayer") == 0) return ids[i];
+    std::strcpy(name, path + pos + 1);
+    if (std::strcmp(name, "RobloxPlayer") == 0) return ids[i];
   }
 
   return 0;
@@ -73,7 +74,7 @@ bool init_roblox_struct() {
     auto path = (char*)read_buffer;
 
     if (!path) continue;
-    if (strstr(path, "/RobloxPlayer") == NULL) continue;
+    if (std::strstr(path, "/RobloxPlayer") == NULL) continue;
 
     struct stat st;
     stat(path, &st);
@@ -100,13 +101,13 @@ T read_memory(const mach_vm_address_t address, const off_t size = sizeof(T)) {
   return buff;
 }
 
-uint8_t* read_data(const mach_vm_address_t address, const off_t size) {
+std::uint8_t* read_data(const mach_vm_address_t address, const off_t size) {
   vm_offset_t data;
   mach_msg_type_number_t sz;
 
   if (vm_read(roblox.task, (vm_address_t)address, size, &data, &sz) != KERN_SUCCESS) return nullptr;
 
-  return (uint8_t*)data;
+  return (std::uint8_t*)data;
 }
 
 template <typename T>
@@ -114,16 +115,16 @@ void write_memory(const mach_vm_address_t address, T data) {
   vm_write(roblox.task, (vm_address_t)address, (vm_offset_t)&data, sizeof(data));
 }
 
-bool compare(const uint8_t* data, const uint8_t* sig, const uint32_t size) {
+bool compare(const std::uint8_t* data, const std::uint8_t* sig, const std::uint32_t size) {
   for (auto i = 0; i < size; i++)
     if (data[i] != sig[i] && sig[i] != 0x00)
       return false;
   return true;
 }
 
-uint8_t* find_sig(const void* start, const void* end, const char* sig, const uint32_t size) {
-  for (auto i = (uint8_t*)start; i < (uint8_t*)end - size; i++)
-    if (compare(i, (uint8_t*)sig, size))
+std::uint8_t* find_sig(const void* start, const void* end, const char* sig, const std::uint32_t size) {
+  for (auto i = (std::uint8_t*)start; i < (std::uint8_t*)end - size; i++)
+    if (compare(i, (std::uint8_t*)sig, size))
       return i;
   return 0;
 }
@@ -134,7 +135,7 @@ mach_vm_address_t find_task_scheduler() {
 
   if (!address) throw std::logic_error("Couldn't find the task scheduler pattern.\nRoblox updates can cause this.\nCheck the GitHub for any new updates.");
 
-  mach_vm_address_t res = roblox.load_address + ((address + *(uint32_t*)(address + 24) + 28) - (mach_vm_address_t)data);
+  mach_vm_address_t res = roblox.load_address + ((address + *(std::uint32_t*)(address + 24) + 28) - (mach_vm_address_t)data);
   vm_deallocate(current_task(), (vm_offset_t)data, roblox.size);
 
   return res;
@@ -142,13 +143,13 @@ mach_vm_address_t find_task_scheduler() {
 
 int main(int argc, const char** argv) {
   try {
-    system("clear");
-    printf("macOS Roblox FPS Unlocker\nCurrently in-development, use at your own risk.\nCreated by lanylow and Seizure Salad.\n");
+    std::system("clear");
+    std::printf("macOS Roblox FPS Unlocker\nCurrently in-development, use at your own risk.\nCreated by lanylow and Seizure Salad.\n");
     if (getuid() != 0) throw std::runtime_error("This application has to be ran as root.\nUsage: sudo ./rbxfpsunlocker <cap>");
 
     unsigned long cap;
     if (*++argv != NULL) {
-      cap = strtoul(*argv, NULL, 0);
+      cap = std::strtoul(*argv, NULL, 0);
       if(cap == 0) cap = 120;
     } else cap = 120;
     
@@ -157,13 +158,13 @@ int main(int argc, const char** argv) {
     auto task_scheduler = read_memory<mach_vm_address_t>(find_task_scheduler());
     write_memory<double>(task_scheduler + 0x138, (double)(1.0 / cap));
 
-    printf("\x1b[92mFPS cap successfully set to %f\x1b[0m\n", (double)cap);
+    std::printf("\x1b[92mFPS cap successfully set to %f\x1b[0m\n", (double)cap);
   }
   catch (std::runtime_error e) {
-    printf("\x1b[91mruntime_error: %s\x1b[0m\n", e.what());
+    std::printf("\x1b[91mruntime_error: %s\x1b[0m\n", e.what());
   }
   catch (std::logic_error e) {
-    printf("\x1b[91mlogic_error: %s\x1b[0m\n", e.what());
+    std::printf("\x1b[91mlogic_error: %s\x1b[0m\n", e.what());
   }
 
   return 0;
