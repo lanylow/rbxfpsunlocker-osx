@@ -3,11 +3,12 @@
 The first Roblox FPS unlocker for macOS. This is a very simple and unpolished FPS unlocker with more updates to come. This has been tested and working both on Intel-based Macs and on M1 Macs using Rosetta 2.
 
 ## Setup
+*Note: you must have `sudo` permissions in order to do the steps below. If you do not have `sudo` permissions, either change your account or add yourself to the sudoers file.*
 1. Download the latest release from here: https://github.com/lanylow/rbxfpsunlocker-osx/releases.
 2. Extract `rbxfpsunlocker.zip` by double clicking on it, if it wasn't extracted automatically.
 3. Place `rbxfpsunlocker` in any folder you want to keep it in.
 4. Right click on `rbxfpsunlocker`, then press the Option key, and finally click "Copy rbxfpsunlocker as file name"
-5. In a text editor, paste the text in, then add `sudo .` before it. example:
+5. In a text editor, paste the text in, then add `sudo .` before it. For example:
  
 ```
 sudo ./Users/MyUser/Downloads/rbxfpsunlocker
@@ -15,7 +16,7 @@ sudo ./Users/MyUser/Downloads/rbxfpsunlocker
 
 6. Then add the FPS cap followed by a space after it. The cap is whatever framerate is desired, e.g. 90, 120, 144, etc. If no framerate is supplied it will automatically be set to 120.
 
-It should look like this, with 999 FPS an `
+It should look like this with 999 FPS.
 ```
 sudo ./Users/MyUser/Downloads/rbxfpsunlocker 999
 ```
@@ -24,14 +25,14 @@ This is the terminal command you will use to run `rbxfpsunlocker`. **Note:** If 
 8. Open the Terminal App using one of two methods:
 	* Press Command + Space, type in `Terminal`, then press enter on the Terminal app. 
 	* Go to the Applications then into the Utilities folder. Open Terminal.
-9. With a Roblox game open, copy and paste the command into Terminal. Enter your password in if it's asked for.
+9. With a Roblox game open, copy and paste the command into Terminal. Enter the password used to log into your Mac in if it's asked for. *Please note that you will **NOT** see the password being typed but the text is still there.*
 
 You must run the command if you leave a Roblox game and join a new one, and after launching Roblox for the first time after logging into macOS. Refer to the sections below to create either a terminal or app shortcut to make the process more convenient. 
 
 ### Creating a Terminal shortcut
 
 In this section you will create define alias, a terminal shortcut with a name and command. Entering the name into the terminal will run the command. 
-1. In Finder, press Command + Shift + G and enter in `~` (copy and paste that in if necessary), it should say `Go to:` followed by the path to your user folder. Press enter or click on it. 
+1. In Finder, press Command + Shift + G and enter in `~` (copy and paste that in if necessary). It should say `Go to:` followed by the path to your user folder. Press enter or click on it. 
 2. You will need to edit a hidden file. To show hidden files, press Command + Shift + . (period). Then locate the file `.zshrc`. This is the file where Terminal aliases are defined among other things.
 3. Open `.zshrc` with a text editor, you may need to right click then press `Open With > Other` and locate the editor you wish to use.
 **If there's any text, don't remove it. Write below all the text in new lines.** Write a new line write an alias like this:
