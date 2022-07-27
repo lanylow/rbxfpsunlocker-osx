@@ -18,6 +18,7 @@ git clone -b ui https://github.com/lanylow/rbxfpsunlocker-osx/ && cd rbxfpsunloc
 
 2. Compile in Xcode by pressing Command+B.
 
+Feel free to contribute and improve this project by making pull requests!
 
 ## Disclaimer
 
