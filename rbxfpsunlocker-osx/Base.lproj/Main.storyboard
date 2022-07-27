@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="rbxfpsunlocker-osx" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="rbxfpsunlocker-osx" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About rbxfpsunlocker-osx" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Services" id="NMo-om-nkz">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                                        <menuItem title="Hide rbxfpsunlocker-osx" keyEquivalent="h" id="Olw-nP-bQN">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit rbxfpsunlocker-osx" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <menu id="Wpm-EZ-JTE">
+                    <items>
+                        <menuItem title="FPS Cap" id="1WI-0y-oCj">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <menu key="submenu" title="FPS Cap" id="pyi-Mf-CYn">
+                                <items>
+                                    <menuItem title="Custom FPS Cap" id="Bud-Bn-imJ">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="custom_fps_cap:" target="Voe-Tx-rLC" id="bwC-JX-OBl"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="None" id="azU-AA-Ju1">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="no_fps_cap:" target="Voe-Tx-rLC" id="1Nh-dC-qed"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="30 FPS" id="f4s-s1-44V">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="thirty_fps:" target="Voe-Tx-rLC" id="g2D-de-gIG"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="60 FPS" id="0Z3-Kq-qYY">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="sixty_fps:" target="Voe-Tx-rLC" id="i4j-p6-Ndz"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="75 FPS" id="JPj-Lb-0VV">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="seventy_five_fps:" target="Voe-Tx-rLC" id="X5W-vu-YTW"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="120 FPS" id="uc0-ID-z7y">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="one_twenty_fps:" target="Voe-Tx-rLC" id="YHD-Fa-i1X"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="144 FPS" id="XEs-Lo-irC">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="one_fourty_four_fps:" target="Voe-Tx-rLC" id="Txs-cW-Jlr"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="165 FPS" id="olA-m3-r5e">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="one_sixty_five_fps:" target="Voe-Tx-rLC" id="TgW-u8-jyo"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="240 FPS" id="r6C-hN-KcL">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="two_fourty_fps:" target="Voe-Tx-rLC" id="7cO-ni-ZeG"/>
+                                        </connections>
+                                    </menuItem>
+                                    <menuItem title="360 FPS" id="Izw-3A-w5E">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="three_sixty_fps:" target="Voe-Tx-rLC" id="lyM-W5-Ipz"/>
+                                        </connections>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </menuItem>
+                        <menuItem title="Lock Roblox Player" state="on" onStateImage="lock.open.fill" catalog="system" offStateImage="lock.fill" id="KJd-Lb-pqD">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="menu_lock_unlock:" target="Voe-Tx-rLC" id="GrU-Q0-NkL"/>
+                                <binding destination="Voe-Tx-rLC" name="value" keyPath="roblox_player_toggled" id="5uk-Yc-B4E"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Lock Roblox Studio" state="on" onStateImage="lock.open.fill" catalog="system" offStateImage="lock.fill" enabled="NO" id="CaQ-XG-aXI">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="zjO-5d-UtA"/>
+                        <menuItem title="Visit GitHub" image="square.and.arrow.up" catalog="system" id="yJv-QK-ovB">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="menu_visit_github:" target="Voe-Tx-rLC" id="iQ1-7J-a5V"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Exit" image="rectangle.portrait.and.arrow.right" catalog="system" id="Ecl-wX-kYk">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="menu_exit:" target="Voe-Tx-rLC" id="w4d-fw-XWc"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
+                    <connections>
+                        <outlet property="menu_bar_item" destination="Wpm-EZ-JTE" id="OJp-dP-STz"/>
+                    </connections>
+                </customObject>
+                <userDefaultsController representsSharedInstance="YES" id="iDq-1J-LOc"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="Roblox FPS Unlocker" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="480" height="270"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ja2-4n-mww">
+                                <rect key="frame" x="18" y="224" width="444" height="26"/>
+                                <textFieldCell key="cell" selectable="YES" alignment="center" title="Thanks for using rbxfpsunlocker-osx." id="ZGg-uk-RSo">
+                                    <font key="font" metaFont="systemBold" size="22"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Y0u-Z9-cN1">
+                                <rect key="frame" x="18" y="160" width="444" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="jeD-8D-N7y"/>
+                                </constraints>
+                                <textFieldCell key="cell" selectable="YES" alignment="center" title="This window will dissapear in 5 seconds and will go to the menu bar." id="1ds-fe-33U">
+                                    <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="749" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="08s-nZ-r2n">
+                                <rect key="frame" x="18" y="114" width="444" height="38"/>
+                                <textFieldCell key="cell" selectable="YES" alignment="center" title="This FPS unlocker was created by lanylow and Seizure Salad." id="7Kc-8W-IpC">
+                                    <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WX9-I5-6RY">
+                                <rect key="frame" x="178" y="39" width="124" height="32"/>
+                                <buttonCell key="cell" type="push" title="Visit GitHub" bezelStyle="rounded" image="square.and.arrow.up" catalog="system" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ajM-7Q-lB6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="github_button_clicked:" target="XfG-lQ-9wD" id="mdB-3f-ZJv"/>
+                                </connections>
+                            </button>
+                            <button horizontalHuggingPriority="260" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qyo-p4-gdk">
+                                <rect key="frame" x="202" y="7" width="77" height="32"/>
+                                <buttonCell key="cell" type="push" title="Exit" bezelStyle="rounded" image="rectangle.portrait.and.arrow.right" catalog="system" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Cgc-DT-l96">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="exit_button_clicked:" target="XfG-lQ-9wD" id="Wo8-CD-n0M"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4ym-I7-DJt">
+                                <rect key="frame" x="30" y="87" width="432" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="The version you are currently using is 1.2.0" id="ixP-fx-vKN">
+                                    <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Y0u-Z9-cN1" firstAttribute="centerX" secondItem="qyo-p4-gdk" secondAttribute="centerX" id="3B9-cP-M6r"/>
+                            <constraint firstAttribute="bottom" secondItem="WX9-I5-6RY" secondAttribute="bottom" constant="46" id="3jK-qp-Pxx"/>
+                            <constraint firstItem="qyo-p4-gdk" firstAttribute="top" secondItem="WX9-I5-6RY" secondAttribute="bottom" constant="12" symbolic="YES" id="93I-nr-xXn"/>
+                            <constraint firstItem="4ym-I7-DJt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="32" id="E8g-HD-aN5"/>
+                            <constraint firstItem="Y0u-Z9-cN1" firstAttribute="trailing" secondItem="ja2-4n-mww" secondAttribute="trailing" id="EJt-vK-NP9"/>
+                            <constraint firstItem="Y0u-Z9-cN1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="P6Y-Ae-xe6"/>
+                            <constraint firstItem="Y0u-Z9-cN1" firstAttribute="centerX" secondItem="WX9-I5-6RY" secondAttribute="centerX" id="RdQ-zq-g2i"/>
+                            <constraint firstItem="4ym-I7-DJt" firstAttribute="top" secondItem="08s-nZ-r2n" secondAttribute="bottom" constant="8" symbolic="YES" id="TBE-Yv-JWd"/>
+                            <constraint firstItem="Y0u-Z9-cN1" firstAttribute="top" secondItem="ja2-4n-mww" secondAttribute="bottom" constant="19" id="ajE-si-0uv"/>
+                            <constraint firstItem="4ym-I7-DJt" firstAttribute="trailing" secondItem="08s-nZ-r2n" secondAttribute="trailing" id="cpX-ZQ-dTv"/>
+                            <constraint firstAttribute="trailing" secondItem="Y0u-Z9-cN1" secondAttribute="trailing" constant="20" symbolic="YES" id="ego-1h-1iZ"/>
+                            <constraint firstItem="Y0u-Z9-cN1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="65" id="iO2-kg-63Y"/>
+                            <constraint firstItem="08s-nZ-r2n" firstAttribute="top" secondItem="Y0u-Z9-cN1" secondAttribute="bottom" constant="8" symbolic="YES" id="iYi-cY-yzE"/>
+                            <constraint firstItem="Y0u-Z9-cN1" firstAttribute="trailing" secondItem="08s-nZ-r2n" secondAttribute="trailing" id="kdH-8k-lrl"/>
+                            <constraint firstItem="Y0u-Z9-cN1" firstAttribute="leading" secondItem="ja2-4n-mww" secondAttribute="leading" id="keF-IU-QpD"/>
+                            <constraint firstItem="Y0u-Z9-cN1" firstAttribute="leading" secondItem="08s-nZ-r2n" secondAttribute="leading" id="pHL-ql-IVX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="739"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lock.fill" catalog="system" width="14" height="15"/>
+        <image name="lock.open.fill" catalog="system" width="16" height="15"/>
+        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="18" height="16"/>
+        <image name="square.and.arrow.up" catalog="system" width="15" height="17"/>
+    </resources>
+</document>
