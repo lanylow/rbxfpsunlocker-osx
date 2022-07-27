@@ -1,3 +1,6 @@
 .vscode/
 rbxfpsunlocker
 *.o
+#Xcode
+xcuserdata
+*.xcworkspace
