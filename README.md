@@ -7,6 +7,9 @@ The first Roblox FPS unlocker for macOS. This UI branch is the first major updat
 1. Download the latest release from here: https://github.com/lanylow/rbxfpsunlocker-osx/releases.
 2. Open the .dmg file and drag and drop the FPS unlocker to your Applications folder.
 3. If you want, you can drag the application into your Launchpad on your Dock.
+4. Double click the `rbxfpsunlocker-osx` file in your Applications folder.
+5. You will see it instantly close and open again with a prompt from `osascript` to enter your password. **Enter your password into the prompt or else the FPS Unlocker will not open.**
+6. After the password prompt, you will see a menu bar item appear. Click it for more details.
 
 ## Compiling (advanced)
 
