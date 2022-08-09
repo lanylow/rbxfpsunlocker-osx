@@ -1,6 +1,6 @@
 # rbxfpsunlocker-osx [![License](https://img.shields.io/badge/License-GPL3.0-green.svg)](https://github.com/lanylow/rbxfpsunlocker-osx/blob/main/LICENSE) ![OS](https://img.shields.io/badge/OS-macOS-green.svg) [![Github All Releases](https://img.shields.io/github/downloads/lanylow/rbxfpsunlocker-osx/total.svg)]()
 
-The first Roblox FPS unlocker for macOS. This has been tested and working both on Intel-based Macs and on M1 Macs using Rosetta 2. A new user interface is now available in the [ui branch](https://github.com/lanylow/rbxfpsunlocker-osx/tree/ui) of this repository.
+The first Roblox FPS unlocker for macOS. This has been tested and works both on Intel-based Macs and on M1 Macs using Rosetta 2. A new user interface is now available in the [ui branch](https://github.com/lanylow/rbxfpsunlocker-osx/tree/ui) of this repository.
 
 ## Setup
 
@@ -10,7 +10,7 @@ The first Roblox FPS unlocker for macOS. This has been tested and working both o
 1. Download the latest release from here: https://github.com/lanylow/rbxfpsunlocker-osx/releases.
 2. Extract `rbxfpsunlocker.zip` by double clicking on it, if it wasn't extracted automatically.
 3. Place `rbxfpsunlocker` in any folder you want to keep it in.
-4. Right click on `rbxfpsunlocker`, then press the Option key, and finally click "Copy rbxfpsunlocker as file name"
+4. Right-click on `rbxfpsunlocker`, then press the Option key, and finally click "Copy rbxfpsunlocker as file name"
 5. In a text editor, paste the text in, then add `sudo .` before it. For example:
  
 ```
@@ -34,20 +34,20 @@ You must run the command if you leave a Roblox game and join a new one, and afte
 
 ### Creating a Terminal shortcut
 
-In this section you will create define alias, a terminal shortcut with a name and command. Entering the name into the terminal will run the command. 
+In this section, you will create an alias, a terminal shortcut with a name and command. Entering the name into the terminal will run the command. 
 1. In Finder, press Command + Shift + G and enter in `~` (copy and paste that in if necessary). It should say `Go to:` followed by the path to your user folder. Press enter or click on it. 
 2. You will need to edit a hidden file. To show hidden files, press Command + Shift + . (period). Then locate the file `.zshrc`. This is the file where Terminal aliases are defined among other things.
-3. Open `.zshrc` with a text editor, you may need to right click then press `Open With > Other` and locate the editor you wish to use.
+3. Open `.zshrc` with a text editor, you may need to right-click then press `Open With > Other` and locate the editor you wish to use.
 **If there's any text, don't remove it. Write below all the text in new lines.** Write a new line write an alias like this:
 ```
 alias roblox='sudo ./Users/MyUser/Downloads/rbxfpsunlocker 999'
 ```
-The name of the alias is `roblox` but it you can name it whatever you want. Keep the exact format, the terminal command is in single quotation marks and there are no spaces next to `=`. You can create as many alias as you want in separate lines for different framerates.
+The name of the alias is `roblox` but you can name it whatever you want. Keep the exact format, the terminal command is in single quotation marks and there are no spaces next to `=`. You can create as many aliases as you want in separate lines for different framerates.
  
 4. Open the Terminal app **(restart Terminal if it's running in order for the alias to apply)**. Enter in the name you chose for your alias and the command should run. In this case, writing `roblox` then hitting enter should run `rbxfpsunlocker` with a cap of 999.
 
 ### Creating an App shortcut
-In this section you will create a shortcut using the built-in Shortcuts app. **The Shortcuts app is only available on macOS versions, Monterey or newer.**
+In this section, you will create a shortcut using the built-in Shortcuts app. **The Shortcuts app is only available on macOS versions, Monterey or newer.**
 
 1. Open the Shortcuts app using one of two methods:
 	* Press Command + Space, type in `Shortcuts`, then press enter on the Terminal app. 
@@ -57,10 +57,10 @@ In this section you will create a shortcut using the built-in Shortcuts app. **T
 
 ![Screenshot](ShortcutExample.png)
 
-You can make as many shortcuts as you wish for different framerates. The shortcut can now be launched from either from the Shortcuts app or you can create a shortcut to the Shortcut that can be opened from either the Dock or in Finder:
+You can make as many shortcuts as you wish for different framerates. The shortcut can now be launched from either the Shortcuts app or you can create a shortcut to the Shortcut that can be opened from either the Dock or in Finder:
 
-1. Right click on the shortcut in the shortcuts menu, and press `Add to Dock`. If you wish to have it on the left side of the dock, then continue with the last two steps. 
-2. Right click on the shortcut in the Dock, and Click Options > Show in Finder.
+1. Right-click on the shortcut in the shortcuts menu, and press `Add to Dock`. If you wish to have it on the left side of the dock, then continue with the last two steps. 
+2. Right-click on the shortcut in the Dock, and Click Options > Show in Finder.
 3. You can now move the shortcut to any folder you want, or pin it to the dock.
 
 ## Compiling (advanced)
@@ -85,9 +85,9 @@ sudo ./rbxfpsunlocker <cap>
 
 ## Disclaimer
 
-**Use at your own risk**, this is new and still in-development, however this uses the same computational/theoretical method as [axstin](https://github.com/axstin/)'s [rbxfpsunlocker](https://github.com/axstin/rbxfpsunlocker) which has been cleared by Roblox as safe to use.
+**Use at your own risk**, this is new and still in development, however, this uses the same computational/theoretical method as [axstin](https://github.com/axstin/)'s [rbxfpsunlocker](https://github.com/axstin/rbxfpsunlocker) which has been cleared by Roblox as safe to use.
 
-Please note that this is a FPS *unlocker* and not a FPS *booster* and if your frame rate is the same or below 60 FPS, then your machine is not powerful enough to run Roblox at more than 60 FPS. Heavy usage of system resources may occur because of the higher frame rate.
+Please note that this is an FPS *unlocker* and not an FPS *booster* and if your frame rate is the same or below 60 FPS, then your machine is not powerful enough to run Roblox at more than 60 FPS. Heavy usage of system resources may occur because of the higher frame rate.
 
 ## Credits
 
