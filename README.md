@@ -32,6 +32,6 @@ Please note that this is a FPS *unlocker* and not a FPS *booster* and if your fr
 ## Credits
 
  - @fjij - For bringing the idea to our attention
- - @lanylow - For reverse engineering and coding the unlocker
- - @SeizureSaladd - For testing the code and coding the front-end
+ - @lanylow - For the base unlocker
+ - @SeizureSaladd - For coding and maintaining the UI
 
