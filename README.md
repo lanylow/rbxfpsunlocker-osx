@@ -96,5 +96,5 @@ Please note that this is an FPS *unlocker* and not an FPS *booster* and if your 
 
  - @fjij - For bringing the idea to our attention
  - @lanylow - For reverse engineering and coding the unlocker
- - @SeizureSaladd - For testing the code and coding the front-end
+ - @SeizureSaladd - For testing the code for older versions
 
