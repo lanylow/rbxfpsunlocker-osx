@@ -1,4 +1,4 @@
-# rbxfpsunlocker-osx [![License](https://img.shields.io/badge/License-GPL3.0-green.svg)](https://github.com/lanylow/rbxfpsunlocker-osx/blob/main/LICENSE) ![OS](https://img.shields.io/badge/OS-macOS-green.svg) [![Github All Releases](https://img.shields.io/github/downloads/lanylow/rbxfpsunlocker-osx/total.svg)]()
+# rbxfpsunlocker-osx [![GitHub license](https://img.shields.io/github/license/lanylow/rbxfpsunlocker-osx?color=informational)](https://github.com/lanylow/rbxfpsunlocker-osx/blob/main/LICENSE) [![Github All Releases](https://img.shields.io/github/downloads/lanylow/rbxfpsunlocker-osx/total.svg?color=informational)]()
 
 The first Roblox FPS unlocker for macOS. This has been tested and works both on Intel-based Macs and on M1 Macs using Rosetta 2. A new user interface is now available in the [ui branch](https://github.com/lanylow/rbxfpsunlocker-osx/tree/ui) of this repository.
 
