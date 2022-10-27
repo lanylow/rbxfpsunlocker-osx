@@ -1,6 +1,10 @@
-# rbxfpsunlocker-osx [![License](https://img.shields.io/badge/License-GPL3.0-green.svg)](https://github.com/lanylow/rbxfpsunlocker-osx/blob/main/LICENSE) ![OS](https://img.shields.io/badge/OS-macOS-green.svg) [![Github All Releases](https://img.shields.io/github/downloads/lanylow/rbxfpsunlocker-osx/total.svg)]()
+# rbxfpsunlocker-osx [![GitHub license](https://img.shields.io/github/license/lanylow/rbxfpsunlocker-osx?color=informational)](https://github.com/lanylow/rbxfpsunlocker-osx/blob/main/LICENSE) [![Github All Releases](https://img.shields.io/github/downloads/lanylow/rbxfpsunlocker-osx/total.svg?color=informational)]()
 
-The first Roblox FPS unlocker for macOS. This has been tested and working both on Intel-based Macs and on M1 Macs using Rosetta 2. A new user interface is now available in the [ui branch](https://github.com/lanylow/rbxfpsunlocker-osx/tree/ui) of this repository.
+The first Roblox FPS unlocker for macOS. This has been tested and works both on Intel-based Macs and on M1 Macs using Rosetta 2. A new user interface is now available in the [ui branch](https://github.com/lanylow/rbxfpsunlocker-osx/tree/ui) of this repository.
+
+## Issues ⚠️
+
+**When creating an issue, please specify which version the issue occurs in (console / ui). All issues without this information will be ignored starting from 12th October 2022.**
 
 ## Disclaimers
 
@@ -12,31 +16,34 @@ Please note that this is a FPS _unlocker_ and not a FPS _booster_ and if your fr
 
 ## Setup
 
-**By continuing you have read the disclaimers above and understand the risks associated with using rbxfpsunlocker-osx.**
-
 **If this setup is a bit too complicated and you want to use a user interface instead, go to the [ui branch](https://github.com/lanylow/rbxfpsunlocker-osx/tree/ui) instead.**
 
 _Note: you must have `sudo` permissions in order to do the steps below. If you do not have `sudo` permissions, either change your account or add yourself to the sudoers file._
 
 1. Download the latest release from here: https://github.com/lanylow/rbxfpsunlocker-osx/releases.
 2. Extract `rbxfpsunlocker.zip` by double clicking on it, if it wasn't extracted automatically.
-3. Place `rbxfpsunlocker` in any folder you want to keep it in.
-4. Right click on `rbxfpsunlocker`, then press the Option key, and finally click "Copy rbxfpsunlocker as file name"
+3. Place `rbxfpsunlocker_osx` in any folder you want to keep it in.
+4. Right-click on `rbxfpsunlocker_osx`, then press the Option key, and finally click "Copy rbxfpsunlocker_osx as file name"
 5. In a text editor, paste the text in, then add `sudo .` before it. For example:
 
 ```
-sudo ./Users/MyUser/Downloads/rbxfpsunlocker
+sudo ./Users/MyUser/Downloads/rbxfpsunlocker_osx
 ```
 
 6. Then add the FPS cap followed by a space after it. The cap is whatever framerate is desired, e.g. 90, 120, 144, etc. If no framerate is supplied it will automatically be set to 120.
-
-It should look like this with 999 FPS.
+   It should look like this with 999 FPS.
 
 ```
-sudo ./Users/MyUser/Downloads/rbxfpsunlocker 999
+sudo ./Users/MyUser/Downloads/rbxfpsunlocker_osx 999
 ```
 
-This is the terminal command you will use to run `rbxfpsunlocker`. **Note:** If you move `rbxfpsunlocker` to another folder, you will need to change the path.
+If you want to unlock FPS in Roblox Studio, add `-s` at the end of the command. It should look like this.
+
+```
+sudo ./Users/MyUser/Downloads/rbxfpsunlocker_osx 999 -s
+```
+
+This is the terminal command you will use to run `rbxfpsunlocker_osx`. **Note:** If you move `rbxfpsunlocker_osx` to another folder, you will need to change the path.
 
 8. Open the Terminal App using one of two methods:
    - Press Command + Space, type in `Terminal`, then press enter on the Terminal app.
@@ -47,24 +54,24 @@ You must run the command if you leave a Roblox game and join a new one, and afte
 
 ### Creating a Terminal shortcut
 
-In this section you will create define alias, a terminal shortcut with a name and command. Entering the name into the terminal will run the command.
+In this section, you will create an alias, a terminal shortcut with a name and command. Entering the name into the terminal will run the command.
 
 1. In Finder, press Command + Shift + G and enter in `~` (copy and paste that in if necessary). It should say `Go to:` followed by the path to your user folder. Press enter or click on it.
 2. You will need to edit a hidden file. To show hidden files, press Command + Shift + . (period). Then locate the file `.zshrc`. This is the file where Terminal aliases are defined among other things.
-3. Open `.zshrc` with a text editor, you may need to right click then press `Open With > Other` and locate the editor you wish to use.
+3. Open `.zshrc` with a text editor, you may need to right-click then press `Open With > Other` and locate the editor you wish to use.
    **If there's any text, don't remove it. Write below all the text in new lines.** Write a new line write an alias like this:
 
 ```
-alias roblox='sudo ./Users/MyUser/Downloads/rbxfpsunlocker 999'
+alias roblox='sudo ./Users/MyUser/Downloads/rbxfpsunlocker_osx 999'
 ```
 
-The name of the alias is `roblox` but it you can name it whatever you want. Keep the exact format, the terminal command is in single quotation marks and there are no spaces next to `=`. You can create as many alias as you want in separate lines for different framerates.
+The name of the alias is `roblox` but you can name it whatever you want. Keep the exact format, the terminal command is in single quotation marks and there are no spaces next to `=`. You can create as many aliases as you want in separate lines for different framerates.
 
-4. Open the Terminal app **(restart Terminal if it's running in order for the alias to apply)**. Enter in the name you chose for your alias and the command should run. In this case, writing `roblox` then hitting enter should run `rbxfpsunlocker` with a cap of 999.
+4. Open the Terminal app **(restart Terminal if it's running in order for the alias to apply)**. Enter in the name you chose for your alias and the command should run. In this case, writing `roblox` then hitting enter should run `rbxfpsunlocker_osx` with a cap of 999.
 
 ### Creating an App shortcut
 
-In this section you will create a shortcut using the built-in Shortcuts app. **The Shortcuts app is only available on macOS versions, Monterey or newer.**
+In this section, you will create a shortcut using the built-in Shortcuts app. **The Shortcuts app is only available on macOS versions, Monterey or newer.**
 
 1. Open the Shortcuts app using one of two methods:
    - Press Command + Space, type in `Shortcuts`, then press enter on the Terminal app.
@@ -74,10 +81,10 @@ In this section you will create a shortcut using the built-in Shortcuts app. **T
 
 ![Screenshot](ShortcutExample.png)
 
-You can make as many shortcuts as you wish for different framerates. The shortcut can now be launched from either from the Shortcuts app or you can create a shortcut to the Shortcut that can be opened from either the Dock or in Finder:
+You can make as many shortcuts as you wish for different framerates. The shortcut can now be launched from either the Shortcuts app or you can create a shortcut to the Shortcut that can be opened from either the Dock or in Finder:
 
-1. Right click on the shortcut in the shortcuts menu, and press `Add to Dock`. If you wish to have it on the left side of the dock, then continue with the last two steps.
-2. Right click on the shortcut in the Dock, and Click Options > Show in Finder.
+1. Right-click on the shortcut in the shortcuts menu, and press `Add to Dock`. If you wish to have it on the left side of the dock, then continue with the last two steps.
+2. Right-click on the shortcut in the Dock, and Click Options > Show in Finder.
 3. You can now move the shortcut to any folder you want, or pin it to the dock.
 
 ## Compiling (advanced)
@@ -88,20 +95,21 @@ You can make as many shortcuts as you wish for different framerates. The shortcu
 git clone https://github.com/lanylow/rbxfpsunlocker-osx/ && cd rbxfpsunlocker-osx
 ```
 
-2. Compile. This will fail if you don't have [Xcode Developer tools](https://mac.install.guide/commandlinetools/index.html) installed.
+2. Compile. This will fail if you don't have [CMake](https://formulae.brew.sh/formula/cmake) installed.
 
 ```
-make
+sh build_release.sh
 ```
 
-3. Launch the unlocker
+3. The binary will be placed in `cmake-build-release`. Go into it and launch the unlocker
 
 ```
-sudo ./rbxfpsunlocker <cap>
+cd cmake-build-release
+sudo ./rbxfpsunlocker_osx <cap>
 ```
 
 ## Credits
 
 - @fjij - For bringing the idea to our attention
 - @lanylow - For reverse engineering and coding the unlocker
-- @SeizureSaladd - For testing the code and coding the front-end
+- @SeizureSaladd - For testing the code for older versions
