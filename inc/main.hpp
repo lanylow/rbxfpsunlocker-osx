@@ -25,4 +25,4 @@
 #include "process/roblox_player.hpp"
 #include "process/roblox_studio.hpp"
 
-#define VERSION_STRING "2.0.0"
+#define VERSION_STRING "2.0.1"
