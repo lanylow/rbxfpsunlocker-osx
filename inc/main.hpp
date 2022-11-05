@@ -7,6 +7,7 @@
 #include <stdexcept>
 #include <functional>
 #include <optional>
+#include <unistd.h>
 
 #include <mach/mach_traps.h>
 #include <mach/mach_init.h>

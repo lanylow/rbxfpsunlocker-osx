@@ -15,3 +15,9 @@ mach_vm_address_t utilities::find_signature(void* start, void* end, const char* 
 
   return 0;
 }
+
+void utilities::remove_roblox_signature() {
+  execl("/usr/bin/codesign", "/usr/bin/codesign", "--remove-signature", "/Applications/Roblox.app/Contents/MacOS/RobloxPlayer", nullptr);
+  execl("/usr/bin/codesign", "/usr/bin/codesign", "--remove-signature", "/Applications/Roblox.app/Contents/MacOS/Roblox.app/Contents/MacOS/Roblox", nullptr);
+  exit(EXIT_SUCCESS);
+}
