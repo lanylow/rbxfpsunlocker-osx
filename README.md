@@ -14,7 +14,7 @@ The first Roblox FPS unlocker for macOS. This has been tested and works both on 
 1. Download the latest release from here: https://github.com/lanylow/rbxfpsunlocker-osx/releases.
 2. Extract `rbxfpsunlocker.zip` by double clicking on it, if it wasn't extracted automatically.
 3. Place `rbxfpsunlocker_osx` in any folder you want to keep it in.
-4. Right-click on `rbxfpsunlocker_osx`, then press the Option key, and finally click "Copy rbxfpsunlocker_osx as file name"
+4. Right-click on `rbxfpsunlocker_osx`, then hold the Option key, and finally click "Copy rbxfpsunlocker_osx as file name"
 5. In a text editor, paste the text in, then add `sudo` before it. For example:
  
 ```
