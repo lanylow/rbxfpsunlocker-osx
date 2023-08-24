@@ -14,7 +14,7 @@ pid_t process::roblox_process::get_process_id(const char* process_name) {
 }
 
 mach_vm_address_t process::roblox_process::find_task_scheduler_address(std::uint8_t* data, off_t size) {
-  auto address = utilities::find_signature(data, data + size, "\xBF\xF0\x02\x00\x00\xE8\x00\x00\x00\x00\x48\x89\xC3\x48\x89\xC7\xE8\x00\x00\x00\x00\x48\x89\x1D\x00\x00\x00\x00", 28);
+  auto address = utilities::find_signature(data, data + size, "\xBF\x48\x03\x00\x00\xE8\x00\x00\x00\x00\x48\x89\xC3\x48\x89\xC7\xE8\x00\x00\x00\x00\x48\x89\x1D\x00\x00\x00\x00", 28);
   if (!address) throw std::runtime_error("Couldn't find the task scheduler signature.\n");
   return (address + *reinterpret_cast<std::uint32_t*>(address + 24) + 28) - reinterpret_cast<mach_vm_address_t>(data);
 }
