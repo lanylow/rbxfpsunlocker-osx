@@ -19,4 +19,4 @@ if [ ! -d "$clientSettingsPath" ]; then
 fi
 
 echo "{\"DFIntTaskSchedulerTargetFps\": $targetFps}" > "$clientSettingsPath/ClientAppSettings.json"
-echo "The FPS unlocker has been installed"
+echo "The FPS unlocker has been installed in $robloxPath"
