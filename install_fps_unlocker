@@ -1,12 +1,12 @@
 #!/bin/sh
 
 targetFps=10000
-robloxPath="/Applications/Roblox.app"
+robloxPath=$(find /Applications -name Roblox.app -print -quit 2>/dev/null)
 
-if [ ! -d $robloxPath ]; then
-  $robloxPath="~$robloxPath"
+if [ -z "$robloxPath" ]; then
+  $robloxPath=$(find ~ -name Roblox.app -print -quit 2>/dev/null)
 
-  if [ ! -d $robloxPath ]; then
+  if [ -z "$robloxPath" ]; then
     echo "Roblox installation folder couldn't be found."
     exit
   fi
