@@ -1,6 +1,11 @@
 #!/bin/sh
 
-targetFps=10000
+if [ -z "$1" ]
+  then
+    targetFps=10000
+  else
+    targetFps=$1
+fi
 robloxPath=$(find /Applications -name Roblox.app -print -quit 2>/dev/null)
 
 if [ -z "$robloxPath" ]; then
