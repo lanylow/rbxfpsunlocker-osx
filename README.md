@@ -10,7 +10,7 @@ curl -f https://raw.githubusercontent.com/lanylow/rbxfpsunlocker-osx/script/inst
 ```
 After executing the script, you should see a confirmation that the unlocker was installed.
 
-*Note: you must run the command again when Roblox updates.*
+*Note: You must run the command again when Roblox updates.*
 
 *Note: if you're using macOS Ventura or newer and your display doesn't support more than 60 Hz **you won't see the effect of this program**. Please don't create issues asking about this.*
 
