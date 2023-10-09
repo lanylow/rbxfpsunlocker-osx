@@ -32,3 +32,6 @@ jobs:
 
       - name: Run rbxfpsunlocker
         run: curl -f https://raw.githubusercontent.com/lanylow/rbxfpsunlocker-osx/script/install_fps_unlocker | sh
+      
+      - name: Verify
+        run: cat /Applications/Roblox.app/Contents/MacOS/ClientSettings/ClientAppSettings.json
