@@ -7,11 +7,11 @@ The first Roblox FPS unlocker for macOS. This program works on both Intel and Ap
 
 If you don't want to set your own custom FPS cap, you can use the following command to do it automatically:
 ```
-curl -f https://raw.githubusercontent.com/92959/rbxfpsunlocker-osx/script/install_fps_unlocker | sh
+curl -f https://raw.githubusercontent.com/lanylow/rbxfpsunlocker-osx/script/install_fps_unlocker | sh
 ```
 Otherwise, you can follow the steps below:
 
-1. Download the script using `curl -LO https://raw.githubusercontent.com/92959/rbxfpsunlocker-osx/script/install_fps_unlocker`
+1. Download the script using `curl -LO https://raw.githubusercontent.com/lanylow/rbxfpsunlocker-osx/script/install_fps_unlocker`
 2. Make the script executable using `chmod +x ./install_fps_unlocker`
 3. Run the script and set your custom FPS cap using `./install_fps_unlocker (custom FPS cap number goes here)`
 
@@ -21,7 +21,7 @@ After executing the script, you should see a confirmation that the unlocker was 
 
 *Note: if you're using macOS Ventura or newer and your display doesn't support more than 60 Hz **you won't see the effect of this program**. Please don't create issues asking about this. A workaround or fix will **NEVER** be made.*
 
-*Note: This experimental version of rbxfpsunlocker-osx might ask you for your contacts, or reminders, or calendar, or photos. **If it does, click "Don't Allow" or "Cancel".** Don't worry, this is normal behavior with `find` looking in your Full User directory, and is not trying to steal your information.*
+*Note: rbxfpsunlocker-osx might ask you for your contacts, or reminders, or calendar, or photos. **If it does, click "Don't Allow" or "Cancel".** Don't worry, this is normal behavior with the command/process `find` looking in your Full User directory. **The script is not actively trying to steal your information.***
 
 ## Credits
  
