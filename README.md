@@ -19,7 +19,7 @@ After executing the script, you should see a confirmation that the unlocker was 
 
 *Note: You must run the command again when Roblox updates.*
 
-*Note: if you're using macOS Ventura or newer and your display doesn't support more than 60 Hz **you won't see the effect of this program unless you force Roblox to use OpenGL**. Please don't create issues asking about this. A workaround or fix will **NEVER** be made.*
+*Note: If you're using macOS Ventura or newer and your display doesn't support more than 60 Hz **you won't see the effect of this program unless you force Roblox to use OpenGL**. Please don't create issues asking about this. A workaround or fix will **NEVER** be made.*
 
 *Note: rbxfpsunlocker-osx might ask you for your contacts, or reminders, or calendar, or photos. **If it does, click "Don't Allow" or "Cancel".** Don't worry, this is normal behavior with the command/process `find` looking in your Full User directory. **The script is not actively trying to steal your information.***
 
