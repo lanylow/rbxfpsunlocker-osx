@@ -7,11 +7,11 @@ The first Roblox FPS unlocker for macOS. This program works on both Intel and Ap
 
 If you don't want to set your own custom FPS cap, you can use the following command to do it automatically:
 ```
-curl -f https://raw.githubusercontent.com/92959/rbxfpsunlocker-osx/script/install_fps_unlocker | sh
+curl -f https://raw.githubusercontent.com/lanylow/rbxfpsunlocker-osx/script/install_fps_unlocker | sh
 ```
 Otherwise, you can follow the steps below:
 
-1. Download the script using `curl -LO https://raw.githubusercontent.com/92959/rbxfpsunlocker-osx/script/install_fps_unlocker`
+1. Download the script using `curl -LO https://raw.githubusercontent.com/lanylow/rbxfpsunlocker-osx/script/install_fps_unlocker`
 2. Make the script executable using `chmod +x ./install_fps_unlocker`
 3. Run the script and set your custom FPS cap using `./install_fps_unlocker (custom FPS cap number goes here)`
 
