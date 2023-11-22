@@ -9,6 +9,7 @@ You can either download the `install_fps_unlocker` script and run it yourself, o
 curl -f https://raw.githubusercontent.com/lanylow/rbxfpsunlocker-osx/script/install_fps_unlocker | sh
 ```
 After executing the script, you should see a confirmation that the unlocker was installed.
+<img width="935" alt="image" src="https://github.com/lanylow/rbxfpsunlocker-osx/assets/31806776/2de65444-82c0-4a79-b387-58cdd3c96d2c">
 
 *Note: you must run the command again when Roblox updates.*
 
