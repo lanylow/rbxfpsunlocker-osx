@@ -18,13 +18,5 @@ if [ ! -d "$clientSettingsPath" ]; then
   mkdir $clientSettingsPath
 fi
 
-clientSettings=" \
-{ \
-  \"DFIntTaskSchedulerTargetFps\": $targetFps, \
-  \"FFlagDebugGraphicsDisableMetal\": \"true\", \
-  \"FFlagDebugGraphicsPreferVulkan\": \"true\" \
-} \
-"
-
-echo $clientSettings > "$clientSettingsPath/ClientAppSettings.json"
+echo "{\"DFIntTaskSchedulerTargetFps\": $targetFps}" > "$clientSettingsPath/ClientAppSettings.json"
 echo "The FPS unlocker has been installed in $robloxPath"
